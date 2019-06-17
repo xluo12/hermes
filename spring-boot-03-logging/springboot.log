@@ -1,0 +1,10 @@
+2019-06-16 22:05:29.937  INFO 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : Starting SpringBoot03LoggingApplicationTests on Xiaoyus-MBP.fios-router.home with PID 96924 (started by ChrisLuo in /Users/ChrisLuo/Documents/GitHub/spring_boot/spring-boot-03-logging)
+2019-06-16 22:05:29.939 DEBUG 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2019-06-16 22:05:29.940  INFO 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : No active profile set, falling back to default profiles: default
+2019-06-16 22:05:33.424  INFO 96924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-16 22:05:33.907  INFO 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : Started SpringBoot03LoggingApplicationTests in 5.483 seconds (JVM running for 7.53)
+2019-06-16 22:05:34.355 DEBUG 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : This is debug log
+2019-06-16 22:05:34.355  INFO 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : This is info log
+2019-06-16 22:05:34.355  WARN 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : This is warn log
+2019-06-16 22:05:34.355 ERROR 96924 --- [main] .m.s.SpringBoot03LoggingApplicationTests : This is error log
+2019-06-16 22:05:34.365  INFO 96924 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
