@@ -1,8 +1,10 @@
 package com.xluo12.springboot.config;
 
 
+import com.xluo12.springboot.component.MyLocaleResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,5 +21,10 @@ public class MySpringMvcConfigurer {
 
             }
         };
+    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new MyLocaleResolver();
     }
 }
