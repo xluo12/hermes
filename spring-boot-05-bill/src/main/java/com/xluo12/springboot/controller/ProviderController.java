@@ -12,6 +12,7 @@ public class ProviderController {
     @GetMapping("/providers")
     public String list() {
         return "provider/list";
+//        return "main/public";
     }
 
 }
