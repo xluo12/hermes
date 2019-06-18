@@ -1,4 +1,4 @@
-package com.mengxuegu.springboot;
+package com.xluo12.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
