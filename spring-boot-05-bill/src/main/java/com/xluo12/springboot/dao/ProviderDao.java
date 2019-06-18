@@ -54,6 +54,10 @@ public class ProviderDao {
                     providers.add(provider);
                 }
             }
+            // found no results
+            if (count == 0) {
+                providers = new ArrayList<Provider>();
+            }
         }
 
         return providers;
