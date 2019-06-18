@@ -28,7 +28,7 @@
         <form id="searchForm" th:action="@{/providers}" th:method="get">
         <div class="search">
             <span>供应商名称：</span>
-            <input type="text" name="providerName" placeholder="请输入供应商的名称"/>
+            <input type="text" th:value="${providerName}" name="providerName" placeholder="请输入供应商的名称"/>
             <input type="button" onclick="$('#searchForm').submit()" value="查询"/>
             <a href="add.html">添加供应商</a>
         </div>
@@ -54,7 +54,7 @@
                 <td th:text="${#dates.format(p.createDate, 'yyyy-MM-dd HH:mm')}">2015-11-12</td>
                 <!--<td th:text="${p.createDate}">2015-11-12</td>-->
                 <td>
-                    <a href="view.html"><img th:href="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
+                    <a th:href="@{/provider/} + ${p.pid}" href="view.html"><img th:href="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
                     <a href="update.html"><img th:href="@{/img/xiugai.png}" src="../img/xiugai.png" alt="修改" title="修改"/></a>
 					<a href="#" class="delete" ><img th:href="@{/img/schu.png}" src="../img/schu.png" alt="删除" title="删除"/></a>
                 </td>
