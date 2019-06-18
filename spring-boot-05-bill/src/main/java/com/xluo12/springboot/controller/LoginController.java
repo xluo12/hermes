@@ -3,6 +3,7 @@ package com.xluo12.springboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
@@ -22,5 +23,12 @@ public class LoginController {
 
         map.put("msg", "用户名或密码错误");
         return "main/login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("loginUser");
+        session.invalidate();
+        return "redirect:/index.html";
     }
 }
