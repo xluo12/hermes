@@ -11,8 +11,8 @@
             <h1>梦学谷账单管理系统</h1>
         </header>
         <section class="loginCont">
-			<!--<div style="color:red; margin-left: 130px">用户名错误！</div>-->
-            <form class="loginForm" action="../main/index.html">
+			<div th:if="${not #strings.isEmpty(msg)}" th:text="${msg}" style="color:red; margin-left: 130px">用户名错误！</div>
+            <form class="loginForm" th:action="@{/login}" th:method="post" action="../main/index.html">
 				
                 <div class="inputbox">
                     <label for="user" th:text="#{login.username}">Username</label>
