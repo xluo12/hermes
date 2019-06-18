@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
@@ -12,10 +13,11 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public String login(String username, String password, Map<String, Object> map) {
+    public String login(HttpSession session, String username, String password, Map<String, Object> map) {
 
         if (!StringUtils.isEmpty(username) && "123".equals(password)) {
-            return "main/index";
+            session.setAttribute("loginUser", username);
+            return "redirect:/main.html";
         }
 
         map.put("msg", "用户名或密码错误");
