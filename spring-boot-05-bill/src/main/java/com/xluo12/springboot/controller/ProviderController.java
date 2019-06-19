@@ -68,6 +68,6 @@ public class ProviderController {
     public String delete(@PathVariable("pid") Integer pid) {
         logger.info("删除供应商id: " + pid);
         providerDao.delete(pid);
-        return "redirect:providers";
+        return "redirect:/providers";
     }
 }
