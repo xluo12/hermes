@@ -50,4 +50,24 @@ public class ProviderController {
 
         return "redirect:providers";
     }
+
+    @GetMapping("/provider")
+    public String toAddPage() {
+        logger.info("To添加供应商");
+        return "provider/add";
+    }
+
+    @PostMapping("/provider")
+    public String add(Provider provider) {
+        logger.info("添加供应商" + provider);
+        providerDao.save(provider);
+        return "redirect:providers";
+    }
+
+    @DeleteMapping("/provider/{pid}")
+    public String delete(@PathVariable("pid") Integer pid) {
+        logger.info("删除供应商id: " + pid);
+        providerDao.delete(pid);
+        return "redirect:providers";
+    }
 }

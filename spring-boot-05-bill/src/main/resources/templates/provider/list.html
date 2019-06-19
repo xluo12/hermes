@@ -30,7 +30,7 @@
             <span>供应商名称：</span>
             <input type="text" th:value="${providerName}" name="providerName" placeholder="请输入供应商的名称"/>
             <input type="button" onclick="$('#searchForm').submit()" value="查询"/>
-            <a href="add.html">添加供应商</a>
+            <a th:href="@{/provider}" href="add.html">添加供应商</a>
         </div>
         </form>
 
