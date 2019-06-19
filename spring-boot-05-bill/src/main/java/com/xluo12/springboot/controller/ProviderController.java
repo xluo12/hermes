@@ -21,7 +21,7 @@ public class ProviderController {
     ProviderDao providerDao;
 
     @GetMapping("/providers")
-    public String list(Map<String, Object> map, @RequestParam(value="providerName", required = false) String providerName) {
+    public String list(Map<String, Object> map, @RequestParam(value = "providerName", required = false) String providerName) {
 
         logger.info("供应商列表查询: " + providerName);
 
@@ -29,16 +29,25 @@ public class ProviderController {
         map.put("providers", providers);
         map.put("providerName", providerName);
         return "provider/list";
-     }
+    }
 
     @GetMapping("/provider/{pid}")
-    public String view(@PathVariable("pid") Integer pid, Map<String, Object> map) {
+    public String view(@PathVariable("pid") Integer pid, @RequestParam(value = "type", defaultValue = "view") String type, Map<String, Object> map) {
 
         logger.info("查询id: " + pid);
 
         Provider provider = providerDao.getProvider(pid);
 
         map.put("provider", provider);
-        return "provider/view";
+        return "provider/" + type;
+    }
+
+    @PutMapping("/provider")
+    public String update(Provider provider) {
+
+        logger.info("更新信息...");
+        providerDao.save(provider);
+
+        return "redirect:providers";
     }
 }
