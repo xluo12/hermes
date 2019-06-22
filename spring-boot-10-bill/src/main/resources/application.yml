@@ -4,7 +4,7 @@ spring:
     username: root
     password: root
     # for mysql8 or later needs to define timezone
-    url: jdbc:mysql://127.0.0.1:3306/mybatis?serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/bill?serverTimezone=UTC
     # for mysql8 only
     driver-class-name: com.mysql.cj.jdbc.Driver
       #引入Druid数据源
@@ -28,3 +28,6 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
