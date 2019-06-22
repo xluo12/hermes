@@ -1,6 +1,7 @@
 package com.mengxuegu.springboot.dao;
 
 
+import com.mengxuegu.springboot.entities.Provider;
 import com.mengxuegu.springboot.entities.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;

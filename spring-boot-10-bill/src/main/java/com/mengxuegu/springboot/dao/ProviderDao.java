@@ -52,8 +52,8 @@ public class ProviderDao {
                     providers.add(provider);
                 }
             }
-            // found no results
-            if (count == 0) {
+            //没有查询到一条数据
+            if(count == 0 ){
                 providers = new ArrayList<Provider>();
             }
         }

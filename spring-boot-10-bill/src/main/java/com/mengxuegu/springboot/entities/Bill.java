@@ -24,6 +24,18 @@ public class Bill {
     private Double money;
     // 供应商
     private Provider provider;
+
+    //供应商id
+    private Integer pid;
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
     // 是否付款 0 未付款， 1已付款
     private Integer pay;
     // 创建时间
@@ -41,6 +53,7 @@ public class Bill {
         this.pay = pay;
         this.createDate = new Date();
     }
+
 
     @Override
     public String toString() {

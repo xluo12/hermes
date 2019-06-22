@@ -4,6 +4,7 @@ $(function () {
         //灰背景遮挡效果
         $('.zhezhao').css('display', 'block');
         $('#removeProv').fadeIn();
+        //获取点击删除的那个按键的del_uri，然后赋值给提交删除表单的那个action
         $("#deleteForm").attr("action", $(this).attr("del_uri"));
     });
     //点击 确定

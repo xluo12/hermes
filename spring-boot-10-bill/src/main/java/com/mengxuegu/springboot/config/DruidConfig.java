@@ -16,12 +16,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @program: spring-boot-01-hello
- * @description: registration for Druid config properties
- * @author: xluo12
- * @create: 2019-06-19 16:29
- **/
-
+ * 绑定Druid相关信息
+ * @Auther: 梦学谷
+ */
 @Configuration
 public class DruidConfig {
 
@@ -72,4 +69,5 @@ public class DruidConfig {
         bean.setUrlPatterns(Arrays.asList("/*"));
         return bean;
     }
+
 }
