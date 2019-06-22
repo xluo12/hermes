@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * 供应商实体类
+ *
  * @Title: Provider
  * @Description: com.mengxuegu.springboot.entities
  * @Auther: www.mengxuegu.com
@@ -32,7 +33,9 @@ public class Provider {
     public Provider() {
     }
 
-    public Provider(Integer pid, String providerCode, String providerName, String people, String phone, String address, String fax, String describe) {
+    public Provider(Integer pid, String providerCode, String providerName,
+            String people, String phone, String address, String fax,
+            String describe) {
         this.pid = pid;
         this.providerCode = providerCode;
         this.providerName = providerName;
@@ -46,17 +49,7 @@ public class Provider {
 
     @Override
     public String toString() {
-        return "Provider{" +
-                "pid=" + pid +
-                ", providerCode='" + providerCode + '\'' +
-                ", providerName='" + providerName + '\'' +
-                ", people='" + people + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", fax='" + fax + '\'' +
-                ", describe='" + describe + '\'' +
-                ", createDate=" + createDate +
-                '}';
+        return "Provider{" + "pid=" + pid + ", providerCode='" + providerCode + '\'' + ", providerName='" + providerName + '\'' + ", people='" + people + '\'' + ", phone='" + phone + '\'' + ", address='" + address + '\'' + ", fax='" + fax + '\'' + ", describe='" + describe + '\'' + ", createDate=" + createDate + '}';
     }
 
     public Integer getPid() {

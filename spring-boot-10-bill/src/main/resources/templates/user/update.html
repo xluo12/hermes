@@ -37,11 +37,11 @@
                 <div>
                     <label for="realName">真实姓名：</label>
                     <input type="text" th:value="${user.realName}" name="realName" id="realName" placeholder="韩露"/>
-                    <span >*</span>
+                    <span>*</span>
                 </div>
 
                 <div>
-                    <label >用户性别：</label>
+                    <label>用户性别：</label>
 
                     <select name="gender">
                         <option value="1" th:selected="${user.gender == 1}">女</option>
@@ -50,11 +50,12 @@
                 </div>
                 <div>
                     <label for="birthday">出生日期：</label>
-                    <input type="text" th:value="${#dates.format(user.birthday, 'yyyy-MM-dd')}" name="birthday" id="birthday" placeholder="2016年2月1日"/>
-                    <span >*</span>
+                    <input type="text" th:value="${#dates.format(user.birthday, 'yyyy-MM-dd')}" name="birthday"
+                           id="birthday" placeholder="2016年2月1日"/>
+                    <span>*</span>
                 </div>
                 <div>
-                    <label >用户类别：</label>
+                    <label>用户类别：</label>
                     <!--1管理员  2经理  3普通用户-->
                     <input type="radio" name="userType" value="1" th:checked="${user.userType == 1}"/>管理员
                     <input type="radio" name="userType" value="2" th:checked="${user.userType == 2}" checked/>经理

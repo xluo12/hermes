@@ -34,13 +34,15 @@ public class SpringBootBillApplicationTests {
         int size = providerMapper.updateProvider(provider);
         System.out.println(size);
 
-        //providerMapper.addProvider(new Provider(null, "PR-AA", "梦学谷供应商111", "小张", "18888666981", "深圳软件园", "0911-0123456", "品质A"));
+        //providerMapper.addProvider(new Provider(null, "PR-AA", "梦学谷供应商111",
+        // "小张", "18888666981", "深圳软件园", "0911-0123456", "品质A"));
 
         providerMapper.deleteProviderByPid(8);
     }
 
     @Autowired
     BillMapper billMapper;
+
     @Test
     public void testBill() {
         Bill b = new Bill();
@@ -55,7 +57,9 @@ public class SpringBootBillApplicationTests {
         bill.setBillName("cn域名...");
         billMapper.updateBill(bill);
 
-        //billMapper.addBill(new Bill(3001, "Bi-AA11", "粮油aaa", "斤", 80,480.8, new Provider(null, "PR-BB", "梦学谷供应商222", "小李", "18888666982", "深圳软件园", "0911-0123453", "品质B"), 1));
+        //billMapper.addBill(new Bill(3001, "Bi-AA11", "粮油aaa", "斤", 80,480
+        // .8, new Provider(null, "PR-BB", "梦学谷供应商222", "小李", "18888666982",
+        // "深圳软件园", "0911-0123453", "品质B"), 1));
         billMapper.deteleBillByBid(7);
     }
 

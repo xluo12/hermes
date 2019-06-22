@@ -26,7 +26,8 @@
             <p><strong>真实姓名：</strong><span th:text="${user.realName}">韩露</span></p>
             <p><strong>用户性别：</strong><span th:text="${user.gender == 1 ? '女' : '男'}">女</span></p>
             <p><strong>出生日期：</strong><span th:text="${#dates.format(user.birthday, 'yyyy-MM-dd')}">2011/2/1</span></p>
-            <p><strong>用户类别：</strong><span th:text="${user.userType==1 ? '管理员' : (user.userType==2 ? '经理' : '普通用户') }">经理</span></p>
+            <p><strong>用户类别：</strong><span th:text="${user.userType==1 ? '管理员' : (user.userType==2 ? '经理' : '普通用户') }">经理</span>
+            </p>
             <a onclick="history.back(-1)" href="#">返回</a>
         </div>
     </div>

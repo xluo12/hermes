@@ -5,10 +5,10 @@
 <mapper namespace="com.mengxuegu.springboot.mapper.BillMapper">
 
     <select id="getBills" resultType="com.mengxuegu.springboot.entities.BillProvider">
-        select b.*, p.providerName  from bill b left join provider p on b.pid = p.pid
+        select b.*, p.providerName from bill b left join provider p on b.pid = p.pid
         where 1=1
         <if test="billName != null and billName != ''">
-          and b.bill_name like '%${billName}%'
+            and b.bill_name like '%${billName}%'
         </if>
         <if test="pid != null ">
             and b.pid = #{pid}
@@ -24,11 +24,11 @@
         where b.bid = #{bid}
     </select>
 
-    <insert id="addBill" >
+    <insert id="addBill">
         INSERT INTO `bill` ( `bill_code`, `bill_name`, `bill_com`, `bill_num`, `money`, `pay`, `pid`, `create_date`)
         VALUES ( #{billCode}, #{billName}, #{billCom}, #{billNum}, #{money}, #{pay}, #{pid}, now());
     </insert>
-    
+
     <update id="updateBill">
         UPDATE `bill`
         SET `bill_code`=#{billCode}, `bill_name`= #{billName}, `bill_com`=#{billCom}, `bill_num`=#{billNum}, `money`=#{money}, `pay`=#{pay}, `pid`=#{pid}, `create_date`='2018-11-17 15:22:03'

@@ -18,13 +18,13 @@ public class MySpringMvcConfigurer {
 
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
-        return new WebMvcConfigurer(){
+        return new WebMvcConfigurer() {
             //添加视图控制
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("main/login");
-                registry.addViewController("/index.html").setViewName("main/login");
-                registry.addViewController("/main.html").setViewName("main/index");
+                registry.addViewController("/index.html").setViewName("main" + "/login");
+                registry.addViewController("/main.html").setViewName("main" + "/index");
             }
 
             @Override
@@ -35,7 +35,7 @@ public class MySpringMvcConfigurer {
                         //排除不需要拦截的请求路径
                         .excludePathPatterns("/", "/index.html", "/login")
                         //springboot2+之后需要将静态资源文件的访问路径 也排除
-                        .excludePathPatterns("/css/*", "/img/*","/js/*");
+                        .excludePathPatterns("/css/*", "/img/*", "/js/*");
             }
         };
     }

@@ -11,6 +11,7 @@ import java.util.Locale;
 
 /**
  * 自定义区域解析器
+ *
  * @Auther: 梦学谷
  */
 public class MyLocaleResolver implements LocaleResolver {
@@ -25,9 +26,9 @@ public class MyLocaleResolver implements LocaleResolver {
         //获取浏览器上的区域信息
         Locale locale = httpServletRequest.getLocale();
         //获取当前操作系统 默认的区域信息
-//        Locale locale = Locale.getDefault();
+        //        Locale locale = Locale.getDefault();
 
-        if(!StringUtils.isEmpty(l)) {
+        if (!StringUtils.isEmpty(l)) {
             String[] split = l.split("_");
             //接收第1个参数为：语言代码， 国家代码
             locale = new Locale(split[0], split[1]);
@@ -37,7 +38,8 @@ public class MyLocaleResolver implements LocaleResolver {
     }
 
     @Override
-    public void setLocale(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Locale locale) {
+    public void setLocale(HttpServletRequest httpServletRequest,
+            HttpServletResponse httpServletResponse, Locale locale) {
 
     }
 }

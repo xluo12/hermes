@@ -9,15 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 定义登录拦截器
+ *
  * @Auther: 梦学谷
  */
 public class LoginHandlerInterceptor implements HandlerInterceptor {
 
     //调用目标方法之前被拦截
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request,
+            HttpServletResponse response, Object handler) throws Exception {
         Object loginUser = request.getSession().getAttribute("loginUser");
-        if( loginUser != null) {
+        if (loginUser != null) {
             //已经登录过,放行
             return true;
         }

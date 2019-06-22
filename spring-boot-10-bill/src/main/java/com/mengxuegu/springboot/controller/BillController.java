@@ -28,7 +28,7 @@ public class BillController {
 
     @Autowired
     BillMapper billMapper;
-    
+
     @GetMapping("/bills")
     public String list(Map<String, Object> map, Bill bill) {
         logger.info("帐单列表查询。。。" + bill);
@@ -52,17 +52,18 @@ public class BillController {
     /**
      * type = null 进入查看详情页面view.html，
      * type=update 则是进入update.html
+     *
      * @return
      */
     @GetMapping("/bill/{bid}")
-    public String view(@PathVariable("bid") Integer bid,
-                       @RequestParam(value="type", defaultValue = "view") String type,
-                       Map<String, Object> map) {
+    public String view(@PathVariable("bid") Integer bid, @RequestParam(value
+            = "type", defaultValue = "view") String type,
+            Map<String, Object> map) {
         logger.info("查询" + bid + "的详细信息");
 
         BillProvider billProvider = billMapper.getBillByBid(bid);
 
-        if( "update".equals(type)) {
+        if ("update".equals(type)) {
             List<Provider> providers = providerMapper.getProviders(null);
             map.put("providers", providers);
         }
@@ -87,8 +88,8 @@ public class BillController {
     @GetMapping("/bill")
     public String toAddPage(Map<String, Object> map) {
         //查询所有供应端
-//        List<Provider> providers = providerMapper.getProviders(null);
-        map.put("providers", providerMapper.getProviders(null) );
+        //        List<Provider> providers = providerMapper.getProviders(null);
+        map.put("providers", providerMapper.getProviders(null));
         return "bill/add";
     }
 

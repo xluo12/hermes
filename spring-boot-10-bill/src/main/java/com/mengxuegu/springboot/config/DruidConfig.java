@@ -17,6 +17,7 @@ import java.util.Map;
 
 /**
  * 绑定Druid相关信息
+ *
  * @Auther: 梦学谷
  */
 @Configuration
@@ -33,13 +34,14 @@ public class DruidConfig {
      * 配置一个druid的监控
      * 1. 配置一个druid的后台 管理servlet
      * 2. 配置一个druid的filter
-     *
      */
     // 1. 配置一个druid的后台管理servlet
     @Bean
     public ServletRegistrationBean statViewServlet() {
         //注意：请求是 /druid/*
-        ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
+        ServletRegistrationBean<StatViewServlet> bean =
+                new ServletRegistrationBean<>(new StatViewServlet(),
+                        "/druid" + "/*");
 
         //设置初始化参数值
         Map<String, String> initParam = new HashMap<>();
@@ -62,7 +64,8 @@ public class DruidConfig {
         bean.setFilter(new WebStatFilter());
 
         Map<String, String> initPrams = new HashMap<>();
-        initPrams.put(WebStatFilter.PARAM_NAME_EXCLUSIONS, "*.js,*.css,/druid/*");
+        initPrams.put(WebStatFilter.PARAM_NAME_EXCLUSIONS, "*.js,*.css," +
+                "/druid/*");
         bean.setInitParameters(initPrams);
 
         //设置拦截请求

@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * 帐单实体类
+ *
  * @Title: Provider
  * @Description: com.mengxuegu.springboot.entities
  * @Auther: www.mengxuegu.com
@@ -40,9 +41,12 @@ public class Bill {
     private Integer pay;
     // 创建时间
     private Date createDate;
-    public Bill() {}
 
-    public Bill(Integer bid, String billCode, String billName, String billCom, Integer billNum, Double money, Provider provider, Integer pay) {
+    public Bill() {
+    }
+
+    public Bill(Integer bid, String billCode, String billName, String billCom
+            , Integer billNum, Double money, Provider provider, Integer pay) {
         this.bid = bid;
         this.billCode = billCode;
         this.billName = billName;
@@ -57,17 +61,8 @@ public class Bill {
 
     @Override
     public String toString() {
-        return "Bill{" +
-                "bid=" + bid +
-                ", billCode='" + billCode + '\'' +
-                ", billName='" + billName + '\'' +
-                ", billCom='" + billCom + '\'' +
-                ", billNum=" + billNum +
-                ", money=" + money +
-                ", provider=" + provider +
-                ", pay=" + pay +
-                ", createDate=" + createDate +
-                '}';
+        return "Bill{" + "bid=" + bid + ", billCode='" + billCode + '\'' + ","
+                + " billName='" + billName + '\'' + ", billCom='" + billCom + '\'' + ", billNum=" + billNum + ", money=" + money + ", provider=" + provider + ", pay=" + pay + ", createDate=" + createDate + '}';
     }
 
     public Integer getBid() {
