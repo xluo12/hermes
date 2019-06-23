@@ -18,29 +18,29 @@
     </div>
     <div class="right">
         <div class="location">
-            <strong>你现在所在的位置是:</strong>
-            <span>供应商管理页面</span>
+            <strong>You are currently at: </strong>
+            <span>Supplier management page</span>
         </div>
 
         <form id="searchForm" th:action="@{/providers}" th:method="get">
             <div class="search">
-                <span>供应商名称：</span>
-                <input type="text" th:value="${providerName}" name="providerName" placeholder="请输入供应商的名称"/>
-                <input type="button" onclick="$('#searchForm').submit()" value="查询"/>
-                <a th:href="@{/provider}" href="add.html">添加供应商</a>
+                <span>Supplier: </span>
+                <input type="text" th:value="${providerName}" name="providerName" placeholder="Please enter supplier name"/>
+                <input type="button" onclick="$('#searchForm').submit()" value="Search"/>
+                <a th:href="@{/provider}" href="add.html">Add supplier</a>
             </div>
         </form>
 
         <!--供应商操作表格-->
         <table class="providerTable" cellpadding="0" cellspacing="0">
             <tr class="firstTr">
-                <th width="10%">供应商编码</th>
-                <th width="20%">供应商名称</th>
-                <th width="10%">联系人</th>
-                <th width="10%">联系电话</th>
-                <th width="10%">传真</th>
-                <th width="10%">创建时间</th>
-                <th width="30%">操作</th>
+                <th width="10%">Supplier No.</th>
+                <th width="20%">Supplier name</th>
+                <th width="10%">Contact</th>
+                <th width="10%">Phone</th>
+                <th width="10%">Fax</th>
+                <th width="10%">Created</th>
+                <th width="30%">Options</th>
             </tr>
             <tr th:each="p : ${providers}">
                 <td th:text="${p.pid}">PRO-CODE—001</td>
@@ -50,9 +50,9 @@
                 <td th:text="${p.fax}">15918230478</td>
                 <td th:text="${#dates.format(p.createDate, 'yyyy-MM-dd')}">2015-11-12</td>
                 <td>
-                    <a th:href="@{/provider/} + ${p.pid}" href="view.html"><img th:src="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
-                    <a th:href="@{/provider/} + ${p.pid} +'?type=update'" href="update.html"><img th:src="@{/img/xiugai.png}"  src="../img/xiugai.png" alt="修改" title="修改"/></a>
-					<a th:attr="del_uri=@{/provider/}+${p.pid}"  href="#" class="delete" ><img th:src="@{/img/schu.png}"  src="../img/schu.png" alt="删除" title="删除"/></a>
+                    <a th:href="@{/provider/} + ${p.pid}" href="view.html"><img th:src="@{/img/read.png}" src="../img/read.png" alt="details" title="details"/></a>
+                    <a th:href="@{/provider/} + ${p.pid} +'?type=update'" href="update.html"><img th:src="@{/img/xiugai.png}"  src="../img/xiugai.png" alt="update" title="update"/></a>
+					<a th:attr="del_uri=@{/provider/}+${p.pid}"  href="#" class="delete" ><img th:src="@{/img/schu.png}"  src="../img/schu.png" alt="delete" title="delete"/></a>
                 </td>
             </tr>
 
@@ -69,9 +69,9 @@
        <div class="removerChid">
            <h2>提示</h2>
            <div class="removeMain" >
-               <p>你确定要删除吗？</p>
-               <a href="#" id="yes">确定</a>
-               <a href="#" id="no">取消</a>
+               <p>Are you sure you want to delete?</p>
+               <a href="#" id="yes">Yes</a>
+               <a href="#" id="no">No</a>
            </div>
        </div>
     </div>
