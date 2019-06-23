@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  * 自定义数据进行响应
- *
  * @Auther: 梦学谷
  */
 @Component //向容器中添加该组件
@@ -17,16 +16,13 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
 
     /**
      * 自定义数据进行响应
-     *
      * @param webRequest
      * @param includeStackTrace
      * @return
      */
     @Override
-    public Map<String, Object> getErrorAttributes(WebRequest webRequest,
-            boolean includeStackTrace) {
-        Map<String, Object> map = super.getErrorAttributes(webRequest,
-                includeStackTrace);
+    public Map<String, Object> getErrorAttributes(WebRequest webRequest, boolean includeStackTrace) {
+        Map<String, Object> map = super.getErrorAttributes(webRequest, includeStackTrace);
         map.put("company", "mengxuegu.com");
         return map;
     }

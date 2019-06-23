@@ -15,7 +15,6 @@ import java.util.Map;
 
 /**
  * 供应商的控制层
- *
  * @Auther: 梦学谷
  */
 @Controller
@@ -24,10 +23,10 @@ public class ProviderController {
 
     @Autowired
     ProviderDao providerDao;
-
+    
     @Autowired
     ProviderMapper providerMapper;
-
+    
 
     @GetMapping("/providers")
     public String list(Map<String, Object> map, Provider provider) {
@@ -44,16 +43,15 @@ public class ProviderController {
     /**
      * type = null 进入查看详情页面view.html，
      * type=update 则是进入update.html
-     *
-     * @param pid  供应商id
+     * @param pid 供应商id
      * @param type
      * @param map
      * @return
      */
     @GetMapping("/provider/{pid}")
-    public String view(@PathVariable("pid") Integer pid, @RequestParam(value
-            = "type", defaultValue = "view") String type,
-            Map<String, Object> map) {
+    public String view(@PathVariable("pid") Integer pid,
+                       @RequestParam(value="type", defaultValue = "view") String type,
+                       Map<String, Object> map) {
         logger.info("查询" + pid + "的供应商详细信息");
 
         Provider provider = providerMapper.getProviderByPid(pid);

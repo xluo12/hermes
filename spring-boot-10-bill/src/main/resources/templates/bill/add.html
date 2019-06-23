@@ -32,7 +32,7 @@
                 <div>
                     <label for="billName">商品名称：</label>
                     <input type="text" name="billName" id="billName" required/>
-                    <span>*请输入商品名称</span>
+                    <span >*请输入商品名称</span>
                 </div>
                 <div>
                     <label for="billCom">商品单位：</label>
@@ -51,24 +51,22 @@
                     <span>*请输入大于0的正自然数，小数点后保留2位</span>
                 </div>
                 <div>
-                    <label>供应商：</label>
-                    <select name="pid">
+                    <label >供应商：</label>
+                    <select name="pid" >
                         <option value="">--请选择相应的提供商--</option>
-                        <option value="" th:each="p : ${providers}" th:value="${p.pid}" th:text="${p.providerName}">
-                            北京市粮油总公司
-                        </option>
+                        <option value="" th:each="p : ${providers}" th:value="${p.pid}" th:text="${p.providerName}">北京市粮油总公司</option>
                     </select>
                     <span>*请选择供应商</span>
                 </div>
                 <div>
-                    <label>是否付款：</label>
-                    <input type="radio" value="0" name="pay" checked/>未付款
+                    <label >是否付款：</label>
+                    <input type="radio" value="0" name="pay" checked />未付款
                     <input type="radio" value="1" name="pay"/>已付款
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="billList.html">返回</a>-->
-                    <input type="button" onclick="$('#addForm').submit();" value="保存"/>
+                    <input type="button" onclick="$('#addForm').submit();" value="保存" />
                     <input type="button" value="返回" onclick="history.back(-1)"/>
                 </div>
             </form>

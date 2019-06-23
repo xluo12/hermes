@@ -17,7 +17,6 @@ import java.util.Map;
 
 /**
  * 供应商的控制层
- *
  * @Auther: 梦学谷
  */
 @Controller
@@ -26,7 +25,7 @@ public class UserController {
 
     @Autowired
     UserMapper userMapper;
-
+    
 
     @GetMapping("/users")
     public String list(Map<String, Object> map, User user) {
@@ -45,9 +44,9 @@ public class UserController {
      * type=update 则是进入update.html
      */
     @GetMapping("/user/{id}")
-    public String view(@PathVariable("id") Integer id, @RequestParam(value =
-            "type", defaultValue = "view") String type,
-            Map<String, Object> map) {
+    public String view(@PathVariable("id") Integer id,
+                       @RequestParam(value="type", defaultValue = "view") String type,
+                       Map<String, Object> map) {
         logger.info("查询" + id + "的详细信息");
 
         User user = userMapper.getUserById(id);
@@ -101,12 +100,11 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/user/pwd/{oldPwd}")
-    public Boolean checkPwd(HttpSession session,
-            @PathVariable("oldPwd") String oldPwd) {
+    public Boolean checkPwd(HttpSession session, @PathVariable("oldPwd") String oldPwd) {
         logger.info("旧密码:" + oldPwd);
         //1.从Session中获取当前登录用户的User对象
         User user = (User) session.getAttribute("loginUser");
-        if (user.getPassword().equals(oldPwd)) {
+        if(user.getPassword().equals(oldPwd)) {
             //输入的旧密码正确
             return true;
         }

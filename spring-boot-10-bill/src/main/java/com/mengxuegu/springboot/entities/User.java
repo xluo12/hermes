@@ -4,7 +4,6 @@ import java.util.Date;
 
 /**
  * 用户实体类
- *
  * @Title: Provider
  * @Description: com.mengxuegu.springboot.entities
  * @Auther: www.mengxuegu.com
@@ -14,7 +13,7 @@ public class User {
 
     private Integer id;
     //用户名
-    private String username;
+	private String username;
     //真实姓名
     private String realName;
     //用户密码
@@ -38,8 +37,7 @@ public class User {
         return id;
     }
 
-    public User(Integer id, String username, String realName, String password
-            , Integer gender, Integer userType) {
+    public User(Integer id, String username, String realName, String password, Integer gender, Integer userType) {
         this.id = id;
         this.username = username;
         this.realName = realName;
@@ -103,6 +101,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", username='" + username + '\'' + ", " + "realName='" + realName + '\'' + ", password='" + password + '\'' + ", gender=" + gender + ", birthday=" + birthday + ", userType=" + userType + '}';
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", realName='" + realName + '\'' +
+                ", password='" + password + '\'' +
+                ", gender=" + gender +
+                ", birthday=" + birthday +
+                ", userType=" + userType +
+                '}';
     }
 }

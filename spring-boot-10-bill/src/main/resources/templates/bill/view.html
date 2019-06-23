@@ -28,8 +28,7 @@
             <p><strong>总金额：</strong><span th:text="${billProvider.money}">22</span></p>
             <p><strong>供应商：</strong><span th:text="${billProvider.providerName}">AAA</span></p>
             <p><strong>是否付款：</strong><span th:text="${billProvider.pay == 1 ? '已付款' : '未付款' }">未付款</span></p>
-            <p><strong>创建时间：</strong><span th:text="${#dates.format(billProvider.createDate, 'yyyy-MM-dd')}">2029/12/12 12:12:12</span>
-            </p>
+            <p><strong>创建时间：</strong><span th:text="${#dates.format(billProvider.createDate, 'yyyy-MM-dd')}">2029/12/12 12:12:12</span></p>
 
             <a onclick="history.back(-1)" href="#">返回</a>
         </div>

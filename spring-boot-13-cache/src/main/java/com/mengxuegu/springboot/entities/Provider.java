@@ -1,5 +1,6 @@
 package com.mengxuegu.springboot.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * @Version: 1.0
  */
 
-public class Provider {
+public class Provider implements Serializable {
     private Integer pid;
     //供应商编码
     private String providerCode;

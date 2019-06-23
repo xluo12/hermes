@@ -21,13 +21,13 @@ public class LoginController {
     UserMapper userMapper;
 
     @PostMapping("/login")
-    public String login(HttpSession session, String username, String password
-            , Map<String, Object> map) {
+    public String login (HttpSession session, String username, String password, Map<String, Object> map) {
 
 
-        if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password)) {
+        if(!StringUtils.isEmpty(username)
+                && !StringUtils.isEmpty(password)) {
             User user = userMapper.getUserByUsername(username);
-            if (user != null && user.getPassword().equals(password)) {
+            if(user != null && user.getPassword().equals(password)) {
                 //登录成功
                 session.setAttribute("loginUser", user);
                 //重定向 redirect：可以重定向到任意一个请求中（包括其他项目），地址栏改变
@@ -44,7 +44,6 @@ public class LoginController {
 
     /**
      * 退出登录
-     *
      * @return
      */
     @GetMapping("/logout")

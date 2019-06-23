@@ -49,7 +49,6 @@ public class UserService {
         return user;
     }
 
-
     /**
      * 默认情况下删除数据不会将缓存中的数据删除
      * allEntries = true 会将缓存中的所有数据清空
@@ -57,12 +56,10 @@ public class UserService {
      * @param id
      * @return
      */
-    @CacheEvict(/*cacheNames = "user",*/ key="#id", allEntries = true/*, beforeInvocation = true*/)
+    @CacheEvict(/*cacheNames = "user",*/ key="#id", allEntries = true, beforeInvocation = true)
     public Integer deleteUserById(Integer id){
 //        int i = 1/0;
         userMapper.deleteUserById(id);
         return id;
     }
-
-
 }

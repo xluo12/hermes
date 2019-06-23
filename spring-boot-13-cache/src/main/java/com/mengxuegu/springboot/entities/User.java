@@ -1,5 +1,6 @@
 package com.mengxuegu.springboot.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @Auther: www.mengxuegu.com
  * @Version: 1.0
  */
-public class User {
+public class User implements Serializable {
 
     private Integer id;
     //用户名
