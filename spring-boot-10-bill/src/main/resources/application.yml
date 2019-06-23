@@ -26,7 +26,10 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 25
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-
+  thymeleaf:
+    cache: false
+  mvc:
+    date-format: yyyy-MM-dd
 
     #配置mybatis相关文件路径
 mybatis:
@@ -37,3 +40,5 @@ mybatis:
 logging:
   level:
     com.mengxuegu.springboot.mapper: debug
+
+
