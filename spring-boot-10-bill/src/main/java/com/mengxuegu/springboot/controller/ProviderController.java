@@ -3,6 +3,7 @@ package com.mengxuegu.springboot.controller;
 import com.mengxuegu.springboot.dao.ProviderDao;
 import com.mengxuegu.springboot.entities.Provider;
 import com.mengxuegu.springboot.mapper.ProviderMapper;
+import com.mengxuegu.springboot.service.ProviderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,13 @@ public class ProviderController {
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    ProviderDao providerDao;
-    
-    @Autowired
-    ProviderMapper providerMapper;
-    
+    ProviderService providerService;
 
     @GetMapping("/providers")
     public String list(Map<String, Object> map, Provider provider) {
         logger.info("供应商列表查询。。。" + provider);
 
-        List<Provider> providers = providerMapper.getProviders(provider);
+        List<Provider> providers = providerService.getProviders(provider);
 
         map.put("providers", providers);
         map.put("providerName", provider.getProviderName());
@@ -48,13 +45,14 @@ public class ProviderController {
      * @param map
      * @return
      */
+
     @GetMapping("/provider/{pid}")
     public String view(@PathVariable("pid") Integer pid,
                        @RequestParam(value="type", defaultValue = "view") String type,
                        Map<String, Object> map) {
         logger.info("查询" + pid + "的供应商详细信息");
 
-        Provider provider = providerMapper.getProviderByPid(pid);
+        Provider provider = providerService.getProviderByPid(pid);
 
         map.put("provider", provider);
 
@@ -67,7 +65,7 @@ public class ProviderController {
     public String update(Provider provider) {
         logger.info("更改供应商信息。。。");
         //更新操作
-        providerMapper.updateProvider(provider);
+        providerService.updateProvider(provider);
 
         return "redirect:providers";
     }
@@ -84,7 +82,7 @@ public class ProviderController {
     public String add(Provider provider) {
         logger.info("添加供应商数据" + provider);
         //保存数据操作
-        providerMapper.addProvider(provider);
+        providerService.addProvider(provider);
 
         return "redirect:/providers";
     }
@@ -93,7 +91,7 @@ public class ProviderController {
     @DeleteMapping("/provider/{pid}")
     public String delete(@PathVariable("pid") Integer pid) {
         logger.info("删除操作, pid=" + pid);
-        providerMapper.deleteProviderByPid(pid);
+        providerService.deleteProviderByPid(pid);
         return "redirect:/providers";
     }
 }

@@ -30,6 +30,11 @@ spring:
     cache: false
   mvc:
     date-format: yyyy-MM-dd
+  cache:
+    type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
     #配置mybatis相关文件路径
 mybatis:
@@ -40,5 +45,6 @@ mybatis:
 logging:
   level:
     com.mengxuegu.springboot.mapper: debug
+
 
 

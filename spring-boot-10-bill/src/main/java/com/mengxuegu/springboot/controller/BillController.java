@@ -6,6 +6,8 @@ import com.mengxuegu.springboot.entities.BillProvider;
 import com.mengxuegu.springboot.entities.Provider;
 import com.mengxuegu.springboot.mapper.BillMapper;
 import com.mengxuegu.springboot.mapper.ProviderMapper;
+import com.mengxuegu.springboot.service.BillService;
+import com.mengxuegu.springboot.service.ProviderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +26,19 @@ public class BillController {
 
 
     @Autowired
-    ProviderMapper providerMapper;
+    ProviderService providerService;
 
     @Autowired
-    BillMapper billMapper;
+    BillService billService;
     
     @GetMapping("/bills")
     public String list(Map<String, Object> map, Bill bill) {
         logger.info("帐单列表查询。。。" + bill);
 
-        List<BillProvider> billProviders = billMapper.getBills(bill);
+        List<BillProvider> billProviders = billService.getBills(bill);
 
         //获取所有的供应商
-        List<Provider> providers = providerMapper.getProviders(null);
+        List<Provider> providers = providerService.getProviders(null);
 
         map.put("billProviders", billProviders);
         map.put("providers", providers);
@@ -60,10 +62,10 @@ public class BillController {
                        Map<String, Object> map) {
         logger.info("查询" + bid + "的详细信息");
 
-        BillProvider billProvider = billMapper.getBillByBid(bid);
+        BillProvider billProvider = billService.getBillByBid(bid);
 
         if( "update".equals(type)) {
-            List<Provider> providers = providerMapper.getProviders(null);
+            List<Provider> providers = providerService.getProviders(null);
             map.put("providers", providers);
         }
 
@@ -78,7 +80,7 @@ public class BillController {
     public String update(Bill bill) {
         logger.info("更改信息。。。");
         //更新操作
-        billMapper.updateBill(bill);
+        billService.updateBill(bill);
 
         return "redirect:bills";
     }
@@ -88,7 +90,7 @@ public class BillController {
     public String toAddPage(Map<String, Object> map) {
         //查询所有供应端
 //        List<Provider> providers = providerMapper.getProviders(null);
-        map.put("providers", providerMapper.getProviders(null) );
+        map.put("providers", providerService.getProviders(null) );
         return "bill/add";
     }
 
@@ -98,7 +100,7 @@ public class BillController {
     public String add(Bill bill) {
         logger.info("添加数据" + bill);
         //保存数据操作
-        billMapper.addBill(bill);
+        billService.addBill(bill);
 
         return "redirect:/bills";
     }
@@ -107,7 +109,7 @@ public class BillController {
     @DeleteMapping("/bill/{bid}")
     public String delete(@PathVariable("bid") Integer bid) {
         logger.info("删除操作, bid=" + bid);
-        billMapper.deteleBillByBid(bid);
+        billService.deleteBillByBid(bid);
         return "redirect:/bills";
     }
 

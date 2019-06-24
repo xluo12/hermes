@@ -30,7 +30,7 @@
             <p><strong>Fax:</strong><span th:text=" ${provider.fax}">15918230478</span></p>
             <p><strong>Description:</strong><span th:text=" ${provider.describe}">描述</span></p>
 
-            <a th:href="@{/providers}" href="list.html">Back</a>
+            <a onclick="history.back(-1)" href="#">Back</a>
         </div>
     </div>
 </section>

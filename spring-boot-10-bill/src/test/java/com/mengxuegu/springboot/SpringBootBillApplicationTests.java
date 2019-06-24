@@ -56,7 +56,7 @@ public class SpringBootBillApplicationTests {
         billMapper.updateBill(bill);
 
         //billMapper.addBill(new Bill(3001, "Bi-AA11", "粮油aaa", "斤", 80,480.8, new Provider(null, "PR-BB", "梦学谷供应商222", "小李", "18888666982", "深圳软件园", "0911-0123453", "品质B"), 1));
-        billMapper.deteleBillByBid(7);
+        billMapper.deleteBillByBid(7);
     }
 
 }

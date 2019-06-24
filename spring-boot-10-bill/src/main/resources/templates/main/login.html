@@ -13,6 +13,7 @@
         <section class="loginCont">
 			<div th:if="${not #strings.isEmpty(msg)}" style="color:red; margin-left: 130px">Username is incorrect</div>
             <form class="loginForm" th:action="@{/login}" th:method="post" action="../main/index.html">
+                <p>Use "root" as username and "123" as password</p>
                 <div class="inputbox">
                     <label for="user" >Username</label>
                     <input id="user" type="text" name="username"  required/>

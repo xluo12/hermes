@@ -20,6 +20,6 @@ public interface BillMapper {
 
     int updateBill(Bill bill);
 
-    int deteleBillByBid(Integer bid);
+    int deleteBillByBid(Integer bid);
 
 }

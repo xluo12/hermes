@@ -5,6 +5,7 @@ import com.mengxuegu.springboot.entities.Provider;
 import com.mengxuegu.springboot.entities.User;
 import com.mengxuegu.springboot.mapper.ProviderMapper;
 import com.mengxuegu.springboot.mapper.UserMapper;
+import com.mengxuegu.springboot.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,14 @@ public class UserController {
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    UserMapper userMapper;
+    UserService userService;
     
 
     @GetMapping("/users")
     public String list(Map<String, Object> map, User user) {
         logger.info("用户列表查询。。。" + user);
 
-        List<User> users = userMapper.getUsers(user);
+        List<User> users = userService.getUsers(user);
 
         map.put("users", users);
         map.put("username", user.getUsername());
@@ -49,7 +50,7 @@ public class UserController {
                        Map<String, Object> map) {
         logger.info("查询" + id + "的详细信息");
 
-        User user = userMapper.getUserById(id);
+        User user = userService.getUserById(id);
 
         map.put("user", user);
 
@@ -62,7 +63,7 @@ public class UserController {
     public String update(User user) {
         logger.info("更改信息。。。");
         //更新操作
-        userMapper.updateUser(user);
+        userService.updateUser(user);
 
         return "redirect:users";
     }
@@ -79,7 +80,7 @@ public class UserController {
     public String add(User user) {
         logger.info("添加数据" + user);
         //保存数据操作
-        userMapper.addUser(user);
+        userService.addUser(user);
 
         return "redirect:/users";
     }
@@ -88,7 +89,7 @@ public class UserController {
     @DeleteMapping("/user/{id}")
     public String delete(@PathVariable("id") Integer id) {
         logger.info("删除操作, id=" + id);
-        userMapper.deleteUserById(id);
+        userService.deleteUserById(id);
 
         return "redirect:/users";
     }
@@ -115,10 +116,13 @@ public class UserController {
     public String updatePwd(HttpSession session, String password) {
         //1.从Session中获取当前登录用户信息
         User user = (User) session.getAttribute("loginUser");
-        //2. 更新密码
-        user.setPassword(password);
-        //3. 提交到数据库
-        userMapper.updateUser(user);
+        // prohibit changing root user's password
+        if (!user.getUsername().equals("root")) {
+            //2. 更新密码
+            user.setPassword(password);
+            //3. 提交到数据库
+            userService.updateUser(user);
+        }
         //4. 注销重新登录
         return "redirect:/logout";
     }
