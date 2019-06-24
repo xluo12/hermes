@@ -18,16 +18,16 @@
     </div>
     <div class="right">
         <div class="location">
-            <strong>你现在所在的位置是:</strong>
-            <span>用户管理页面 >> 用户信息查看页面</span>
+            <strong>You are currently at: </strong>
+            <span>User management page >> details</span>
         </div>
         <div class="providerView">
-            <p><strong>用户名：</strong><span th:text="${user.username}">hanlu</span></p>
-            <p><strong>真实姓名：</strong><span th:text="${user.realName}">韩露</span></p>
-            <p><strong>用户性别：</strong><span th:text="${user.gender == 1 ? '女' : '男'}">女</span></p>
-            <p><strong>出生日期：</strong><span th:text="${#dates.format(user.birthday, 'yyyy-MM-dd')}">2011/2/1</span></p>
-            <p><strong>用户类别：</strong><span th:text="${user.userType==1 ? '管理员' : (user.userType==2 ? '经理' : '普通用户') }">经理</span></p>
-            <a onclick="history.back(-1)" href="#">返回</a>
+            <p><strong>Username:</strong><span th:text="${user.username}">hanlu</span></p>
+            <p><strong>Real name:</strong><span th:text="${user.realName}">韩露</span></p>
+            <p><strong>Gender:</strong><span th:text="${user.gender == 1 ? 'female' : 'male'}">女</span></p>
+            <p><strong>Birthday:</strong><span th:text="${#dates.format(user.birthday, 'yyyy-MM-dd')}">2011/2/1</span></p>
+            <p><strong>User type:</strong><span th:text="${user.userType==1 ? 'Admin' : (user.userType==2 ? 'Manager' : 'Employee') }">经理</span></p>
+            <a onclick="history.back(-1)" href="#">Back</a>
         </div>
     </div>
 </section>
