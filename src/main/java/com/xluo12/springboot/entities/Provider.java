@@ -6,8 +6,8 @@ import java.util.Date;
 /**
  * 供应商实体类
  * @Title: Provider
- * @Description: com.mengxuegu.springboot.entities
- * @Auther: www.mengxuegu.com
+ * @Description: com.xluo12.springboot.entities
+ * @Auther: www.xluo12.com
  * @Version: 1.0
  */
 

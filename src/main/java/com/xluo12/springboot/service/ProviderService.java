@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * http://localhost:8080/updateProvider?providerCode=123&providerName=aaa&people=xxx&phone=8888&address=99&pid=4
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @CacheConfig(cacheNames="provider")
 @Service

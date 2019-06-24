@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * 绑定Druid相关信息
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Configuration
 public class DruidConfig {

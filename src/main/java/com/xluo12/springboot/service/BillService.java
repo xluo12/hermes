@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * http://localhost:8080/updateBill?billCode=123&billName=aaa&people=xxx&phone=8888&address=99&pid=4
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Service
 public class BillService {

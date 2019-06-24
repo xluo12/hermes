@@ -2,7 +2,7 @@ package com.xluo12.springboot.entities;
 
 /**
  * 封装新的实体，因为帐单列表还有详情都要有供应商名称
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 public class BillProvider extends Bill {
 

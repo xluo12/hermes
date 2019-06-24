@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 //指定缓存公共属性值
 @CacheConfig(cacheNames="user")

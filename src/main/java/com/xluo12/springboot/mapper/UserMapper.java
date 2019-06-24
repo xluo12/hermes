@@ -5,9 +5,9 @@ import com.xluo12.springboot.entities.User;
 import java.util.List;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
-//@Mapper 或 @MapperScan("com.mengxuegu.springboot.mapper")
+//@Mapper 或 @MapperScan("com.xluo12.springboot.mapper")
 public interface UserMapper {
 
     User getUserByUsername(String username);

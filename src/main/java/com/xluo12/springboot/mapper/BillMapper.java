@@ -6,9 +6,9 @@ import com.xluo12.springboot.entities.BillProvider;
 import java.util.List;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
-//@Mapper 或 @MapperScan("com.mengxuegu.springboot.mapper")
+//@Mapper 或 @MapperScan("com.xluo12.springboot.mapper")
 public interface BillMapper {
 
     List<BillProvider> getBills(Bill bill);

@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * 供应商的控制层
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Controller
 public class UserController {

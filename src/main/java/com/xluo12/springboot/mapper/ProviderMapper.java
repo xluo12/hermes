@@ -6,9 +6,9 @@ import com.xluo12.springboot.entities.Provider;
 import java.util.List;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
-//@Mapper 或 @MapperScan("com.mengxuegu.springboot.mapper")
+//@Mapper 或 @MapperScan("com.xluo12.springboot.mapper")
 public interface ProviderMapper {
 
     List<Provider> getProviders(Provider provider);

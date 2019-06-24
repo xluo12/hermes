@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Configuration
 public class MySpringMvcConfigurer {

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 自定义数据进行响应
  *
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Component //向容器中添加该组件
 public class MyErrorAttributes extends DefaultErrorAttributes {
@@ -27,7 +27,7 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
             boolean includeStackTrace) {
         Map<String, Object> map = super.getErrorAttributes(webRequest,
                 includeStackTrace);
-        map.put("company", "mengxuegu.com");
+        map.put("company", "xluo12.com");
         return map;
     }
 

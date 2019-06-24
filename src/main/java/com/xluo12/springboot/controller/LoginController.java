@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
- * @Auther: 梦学谷
+ * @Auther: xluo12
  */
 @Controller
 public class LoginController {
